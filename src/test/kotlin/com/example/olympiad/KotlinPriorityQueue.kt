@@ -8,7 +8,7 @@ import java.util.PriorityQueue
 class KotlinPriorityQueue {
 
     @Test
-    fun testCanUseMinPriorityQueue() {
+    fun testCanUseJavaMinPriorityQueue() {
         val queue: PriorityQueue<Int> = PriorityQueue<Int>()
 
         // Add items (enqueue)
@@ -24,7 +24,7 @@ class KotlinPriorityQueue {
     }
 
     @Test
-    fun testCanUseMaxPriorityQueue() {
+    fun testCanUseJavaMaxPriorityQueue() {
         val queue: PriorityQueue<Int> = PriorityQueue<Int>(Collections.reverseOrder())
 
         // Add items (enqueue)

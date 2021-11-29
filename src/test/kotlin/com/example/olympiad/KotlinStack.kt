@@ -2,8 +2,20 @@ package com.example.olympiad
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import java.util.Stack
 
 class KotlinStack {
+
+    @Test
+    fun testCanUseJavaStack() {
+        var stack = Stack<Int>()
+
+        stack.push(1)
+        stack.push(2)
+
+        assertEquals(2, stack.pop())
+        assertEquals(1, stack.pop())
+    }
 
     @Test
     fun testCanUseArrayDequeAsStack() {
