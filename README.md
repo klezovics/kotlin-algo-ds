@@ -1,66 +1,44 @@
-# kotlin-olympiad Project
+## Notes on tackling olympiad problem in an efficient way 
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Note, this repository is implemented in Kotlin. If you plan to interview in another 
+language its not a problem. Focus on the concepts rather than specific syntax in this repo
+and think about how to implement a similar thing in your language.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+Use this guide as a starting point and then you can read the "Cracking the coding interview" book.
 
-## Running the application in dev mode
+# 1. Practice makes perfect. 
+Workout here https://leetcode.com/
 
-You can run your application in dev mode that enables live coding using:
+# 2. It is necessary to learn a bit of theory to handle such problems.
+Watch this channel. Its the best content of this kind on Youtube.
+Start with something simple and then progress.
 
-```shell script
-./mvnw compile quarkus:dev
-```
+Check out the WilliamFiset youtube channel.
+https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+# 3. Read a couple of guides about solving problems of this kind
 
-## Packaging and running the application
+1. https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
 
-The application can be packaged using:
+# 4. Know how to use the most common data structures in your programming language
+In order to solve live coding problems fast, you need to have the most common API 
+methods memorized. Check out the test folder in this repository. It provides you 
+with the most common idioms to use the most common DS in kotlint
 
-```shell script
-./mvnw package
-```
+# 5. Know your stuff 
+To ace 99% of the coding problems, you need to have a rather limited amount of tools in your box.
+But you need to know how to use and apply it fast.
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory. Be aware that it’s not an _über-jar_ as
-the dependencies are copied into the `target/quarkus-app/lib/` directory.
+Here's a list of the algorithms and data structures you need to know 
+## Big-O notation
+Here's an explanation: https://www.freecodecamp.org/news/my-first-foray-into-technology-c5b6e83fe8f1/
+## Algorithm and data structure operations Big-O complexity
+Here's a cheat sheet.
+You need to have an intuitive understanding of why the complexity is this or 
+that for a given operation.
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/
 
-If you want to build an _über-jar_, execute the following command:
-
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/kotlin-olympiad-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Related Guides
-
-- Kotlin ([guide](https://quarkus.io/guides/kotlin)): Write your services in Kotlin
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+## Arrays and lists
+## Trees
+## Graphs 
