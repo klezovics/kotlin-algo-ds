@@ -60,6 +60,7 @@ https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structur
 - Look into more details into Kotlin OOP stuff
 - Look into more details around ranges
 - Zip function
+- Build list function, all builder functions
 
 # Resources
 - Kotlin standard library safari: https://www.youtube.com/playlist?list=PLJyNTzRFHgNZO_zfWWlyt0Yg4xw4c6D7X
