@@ -1,3 +1,15 @@
 package com.example.olympiad
 
-class KotlinArrays
+import org.junit.jupiter.api.Test
+
+// Workout for kotlin array syntax
+class KotlinArrays {
+
+    @Test
+    fun testCanInitialize1DArray() {
+    }
+
+    @Test
+    fun testCanInitialize2DArray() {
+    }
+}
