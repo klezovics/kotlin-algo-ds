@@ -41,4 +41,26 @@ https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structur
 
 ## Arrays and lists
 ## Trees
-## Graphs 
+## Graphs
+
+# Notes 
+
+ - For list data structures use mutableSetOf() or immutableSetOf()
+ - For set and map use the kotlin classes
+ - For stack use the Java stack class 
+ - For queue use ArrayDeque
+ - For PriorityQueue use the java priority queue class
+ - This is very useful if you want to master the kotlin standard library fast https://www.youtube.com/playlist?list=PLJyNTzRFHgNZO_zfWWlyt0Yg4xw4c6D7X
+
+# ToDo 
+- Look in more details into sorting methods 
+- Look into more detail into search methods like indexOf
+- Look into more detail into kotlin collection classes https://kotlinlang.org/docs/collections-overview.html
+- Look into more details into methods like take, takeFirst, etc
+- Look into more details into Kotlin OOP stuff
+- Look into more details around ranges
+- Zip function
+
+# Resources
+- Kotlin standard library safari: https://www.youtube.com/playlist?list=PLJyNTzRFHgNZO_zfWWlyt0Yg4xw4c6D7X
+- Kotlin collections cheat sheet: https://medium.com/mobile-app-development-publication/kotlin-collection-functions-cheat-sheet-975371a96c4b
