@@ -1,85 +1,44 @@
-package com.example
+import java.util.LinkedList
 
-fun main() {
-    val s = Solution()
-    // println(s.lengthOfLongestSubstring("tmmzuxt"))
-}
+class Solution : Reader4() {
 
-class Solution {
-    fun isValidSudoku(board: Array<CharArray>): Boolean {
-        return Board(board).isValid()
+    var buffer: MutableList<Char> = LinkedList<Char>()
+    var filled: Boolean = false
+
+    fun fromBuffer(buf: CharArray, n: Int): Int {
+        for (ii in 0 until n) buf[ii] = buffer[ii]
+        buffer = buffer.drop(n).toMutableList()
+        return n
     }
 
-    class Board(
-        val board: Array<CharArray>
-    ) {
+    fun fillBuffer(): Boolean {
+        val tmp = CharArray(4) { '0' }
+        do {
+            val read = read4(tmp)
+            for (ii in 0 until read) buffer.add(tmp[ii])
+        } while (read > 0)
 
-        fun isValid(): Boolean {
-            return allRowsValid() && allColumnsValid() && allSquaresValid()
+        return true
+    }
+
+    override fun read(buf: CharArray, n: Int): Int {
+        if (!filled) {
+            fillBuffer()
+            filled = true
         }
 
-        fun allRowsValid(): Boolean {
-            for (r in 0..8) {
-                if (!rowValid(r)) return false
-            }
+        if (buffer.size >= n) return fromBuffer(buf, n)
 
-            return true
-        }
+        return fromBuffer(buf, buffer.size)
+    }
+}
 
-        fun allColumnsValid(): Boolean {
-            for (c in 0..8) {
-                if (!columnValid(c)) return false
-            }
+open class Reader4 {
+    open fun read(buf: CharArray, n: Int): Int {
+        return 0
+    }
 
-            return true
-        }
-
-        private fun rowValid(r: Int): Boolean {
-            val s = mutableSetOf<Int>()
-            for (c in 0..8) {
-                val e = board[r][c]
-                if (e == '.') continue
-                if (s.contains(e.digitToInt())) return false
-                s.add(e.digitToInt())
-            }
-
-            return true
-        }
-
-        private fun columnValid(c: Int): Boolean {
-            val s = mutableSetOf<Int>()
-            for (r in 0..8) {
-                val e = board[r][c]
-                if (e == '.') continue
-                if (s.contains(e.digitToInt())) return false
-                s.add(e.digitToInt())
-            }
-
-            return true
-        }
-
-        fun allSquaresValid(): Boolean {
-
-            val squares = listOf(
-                Pair(Pair(0, 0), Pair(2, 2)), // top left
-                Pair(Pair(0, 3), Pair(2, 5)), // top mid
-                Pair(Pair(0, 6), Pair(2, 8)), // top right 
-                Pair(Pair(3, 0), Pair(5, 2)), // mid left
-                Pair(Pair(3, 3), Pair(5, 5)), // mid mid
-                Pair(Pair(3, 6), Pair(5, 8)), // mid right 
-                Pair(Pair(6, 0), Pair(8, 2)), // bottom left
-                Pair(Pair(6, 3), Pair(8, 5)), // bottom mid
-                Pair(Pair(6, 6), Pair(8, 8)) // bottom right
-            )
-            for (square in squares) {
-                if (!squareValid(square)) return false
-            }
-
-            return false
-        }
-
-        private fun squareValid(square: Pair<Pair<Int, Int>, Pair<Int, Int>>): Boolean {
-            return true
-        }
+    fun read4(buf4: CharArray): Int {
+        return 0
     }
 }
