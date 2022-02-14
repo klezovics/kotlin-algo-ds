@@ -3,12 +3,12 @@ package com.example.google.graph
 import org.junit.jupiter.api.Test
 import java.util.LinkedList
 
-class GraphDFS {
+class GraphBFS {
 
     @Test
-    fun testBasicDfs() {
+    fun testBasicBfs() {
         // 0->1->2->3
-        val r = dfs(
+        val r = bfs(
             listOf(
                 listOf(1),
                 listOf(2),
@@ -25,12 +25,12 @@ class GraphDFS {
     }
 
     @Test
-    fun testAdvancedDfs() {
+    fun testAdvancedBfs() {
         // 0 -> 1,2 
         // 1 -> 3,4
         // 2 -> 3,4
         // 5 -> 6
-        val r = dfs(
+        val r = bfs(
             listOf(
                 listOf(1, 2),
                 listOf(3, 4),
@@ -49,36 +49,9 @@ class GraphDFS {
         }
     }
 
-    @Test
-    fun testDfs3() {
-        // 0 -> 1,2 
-        // 1 -> 3,4,5
-        // 2 -> 3,4
-        // 6 -> 7
-        val r = dfs(
-            listOf(
-                listOf(1, 2), // 0
-                listOf(3, 4, 5), // 1
-                listOf(3, 4), // 2
-                listOf(), // 3
-                listOf(), // 4
-                listOf(), // 5
-                listOf(7), // 6  
-                listOf()
-            )
-        )
-
-        for ((count, component) in r.withIndex()) {
-            print("Component $count:")
-            component.forEach { print("$it,") }
-            println()
-        }
-    }
-
     // I1: Receive graph as adjacency list
     // I2: Return traversal as a traversal of a set of connected components
-    // DFS is same as BFS, but stack is used instead of queue
-    fun dfs(nodes: List<List<Int>>): List<List<Int>> {
+    fun bfs(nodes: List<List<Int>>): List<List<Int>> {
         // I3: Keep track of list of visited nodes
         val visited = BooleanArray(nodes.size) { false }
 
@@ -92,13 +65,13 @@ class GraphDFS {
 
             // Q -> Next to visit
             val q = LinkedList<Int>()
-            q.push(node)
+            q.add(node)
             result.add(mutableListOf<Int>())
 
             // Q may contain duplicate nodes, since two nodes
             // processed in sequence can have the same neighbour
             while (q.isNotEmpty()) {
-                val current = q.pop()
+                val current = q.poll()
                 // Check if we've been here before
                 if (visited[current]) continue
                 // Visiting a node occurs here
@@ -109,7 +82,7 @@ class GraphDFS {
                 // Let's load its neighbours into a queue
                 for (neighbour in nodes[current]) {
                     // We don't want duplicate visits
-                    if (!visited[neighbour]) q.push(neighbour)
+                    if (!visited[neighbour]) q.add(neighbour)
                 }
             }
         }
